@@ -1,0 +1,84 @@
+body {
+  background-color: #D3C0D3;
+  color: #230C33;
+
+}
+
+a, a:hover {
+  color: #617;
+}
+
+.jumbotron, .navbar-default {
+  background-color: #340068;
+  color: #fff;
+  font-family: 'Comfortaa', cursive;
+}
+
+.navbar-default .navbar-brand, .navbar-default .navbar-brand:hover {
+  color: #fff;
+  font-family: 'Comfortaa', cursive;
+  font-weight: 700;
+}
+
+.navbar-default .navbar-nav > li > a, .navbar-default .navbar-nav > li > a:hover {
+  color: #fff;
+  font-family: 'Comfortaa', cursive;
+  font-weight: 700;
+}
+
+h1, h2, h5, label, th, p.list-group-item, footer {
+  font-family: 'Sarala', sans-serif;
+}
+
+h3, h4, td, a.list-group-item, p, span {
+  font-family: 'Handlee', cursive;
+}
+
+td, th {
+    padding: 5px;
+}
+
+.list-unstyled>li>a>h4{
+  text-align: center;
+}
+
+.btn.btn-primary {
+  font-family: 'Sarala', sans-serif;
+  color: #fff;
+  background-color: #340068;
+  border-color: #340068;
+  display: inline;
+  margin-top: 22px;
+}
+
+.btn.btn-danger {
+  background-color: #A40E4C;
+  border-color: #A40E4C;
+  margin-top: 22px;
+}
+
+input.form-group {
+  display: inline;
+  width: 50%
+}
+
+.list-group-item.active, .list-group-item.active:hover {
+  background-color: #340068;
+  border-color: #340068;
+}
+
+span{
+  font-weight: bolder
+}
+footer {
+  text-align: center;
+}
+
+
+#show-task .form-group h5 {
+  font-size: 1em;
+  font-weight: bold;
+}
+#show-task .form-group span {
+  font-size: 1.4em;
+}

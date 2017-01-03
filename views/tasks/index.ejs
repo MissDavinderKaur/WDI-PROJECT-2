@@ -1,0 +1,25 @@
+<h1>All Active Tasks</h1>
+<table border=3px>
+  <tr> <th>Owner</th><th>Start Date</th><th>Task Detail</th><th>End Date</th><th>Assigned To</th> </tr>
+  <% tasks.filter(t => !t.deleted).forEach(task => { %>
+      <tr> <td> <a href="/users/<%= task.owner._id %>"><%= task.owner.name %> </a></td>
+      <td> <%= task.startDate.toDateString() %></td>
+      <td> <a href="/tasks/<%= task._id %>/edit"> <%= task.description %> </a> </td>
+      <td> <%= task.endDate.toDateString() %> </a> </td>
+      <td> <a href="/users/<%= task.assignedTo._id %>"><%= task.assignedTo.name %> </a> </td> </tr>
+  <% }) %>
+</ul>
+</table>
+
+<h1>All Deleted Tasks</h1>
+<table border=3px>
+  <tr> <th>Owner</th><th>Start Date</th><th>Task Detail</th><th>End Date </th><th>Assigned To</th> </tr>
+  <% tasks.filter(t => t.deleted).forEach(task => { %>
+      <tr> <td> <a href="/users/<%= task.owner._id %>"> <%= task.owner.name %> </a></td>
+      <td> <%= task.startDate.toDateString() %></td>
+      <td> <a href="/tasks/<%= task._id %>/edit"> <%= task.description %> </a> </td>
+      <td> <%= task.endDate.toDateString() %> </a> </td>
+      <td> <a href="/users/<%= task.assignedTo._id %>"><%= task.assignedTo.name %> </a> </td> </tr>
+  <% }) %>
+</ul>
+</table>

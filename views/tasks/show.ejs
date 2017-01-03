@@ -1,0 +1,55 @@
+<div id="show-task">
+<div class="row">
+  <div class="form-group col-md-12">
+    <h6><a href="/users/<%= task.owner._id %>"> Back to my list</a> </h6>
+    <h1> Task Detail: (<%= task.category %>) <%= task.description %> </h1>
+  </div>
+  <div class="form-group col-md-12">
+    <h5>Assigned To:</h5>
+    <span> <%= task.assignedTo.name %> (on behalf of <%= task.owner.name %>) </span>
+  </div>
+  <div class="form-group col-md-3">
+    <h5>Start Date:</h5>
+    <span> <%= task.startDate.toDateString() %> </span>
+  </div>
+  <div class="form-group col-md-3">
+    <h5>End Date:</h5>
+    <span><%= task.endDate.toDateString() %></span>
+  </div>
+  <div class="form-group col-md-2">
+    <p> <a href="/tasks/<%= task._id %>/edit"> <button class="btn btn-primary"> Edit Task </button> </a>
+    </div>
+    <div class="form-group col-md-2">
+      <form action="/tasks/<%= task._id %>" method="post">
+        <input type="hidden" name="_method" value="delete">
+        <button class="btn btn-danger"> Delete Task </button>
+      </form> </p>
+    </div>
+  </div>
+</div>
+
+<div class="row">
+  <div class="form-group col-md-12">
+    <h2>Add update</h2>
+  </div>
+  <form action="/tasks/<%= task._id %>/updates" method="post">
+    <div class="form-group col-md-2">
+      <label for="update_date">Date</label>
+      <input type="date" class="form-control" id="update_date" name="update[date]" required>
+    </div>
+    <div class="form-group col-md-4">
+      <label for="update_note">Update</label>
+      <input type="text" class="form-control" id="update_note" name="update[note]" required>
+    </div>
+    <br>
+    <button type="submit" class="btn btn-primary">Submit</button>
+  </form>
+</div>
+
+<br>
+<h2>Previous Updates</h2>
+<% task.updates.reverse();
+task.updates.forEach(update => { %>
+  <p> <%= update.date.toDateString() %> : <%= update.note %> </p>
+  <% }) %>
+</div>

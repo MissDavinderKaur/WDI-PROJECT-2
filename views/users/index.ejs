@@ -1,0 +1,8 @@
+<h1>Current Users</h1>
+<ul class="list-unstyled">
+  <% users.forEach(user => { %>
+      <li class="list-unstyled">
+        <li><a href="/users/<%= user._id %>"><h4><%= user.name %></h4></a></li>
+    </li>
+  <% }) %>
+</ul>

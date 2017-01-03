@@ -1,0 +1,19 @@
+<h1>Manage User List</h1>
+<button class="btn btn-primary"> <a href="/users/new"> Create New User </button> </a>
+<br> <br>
+<div class="row">
+<% users.forEach(user => { %>
+  <div class="col-sm-6 col-md-4">
+    <div class="thumbnail">
+      <div class="caption">
+        <h3> <a href="/users/<%= user._id %>"> <%= user.name %> </a> </h3>
+        <p> <a href="/users/<%= user._id %>/edit" > <button class="btn btn-primary"> Edit User Details </button> </a>
+        <form action="/users/<%= user._id %>" method="post">
+        <input type="hidden" name="_method" value="delete">
+        <button class="btn btn-danger"> Delete User </button>
+        </form> </p>
+      </div>
+    </div>
+  </div>
+<% }); %>
+<%# </div>%>

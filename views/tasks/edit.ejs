@@ -1,0 +1,54 @@
+<h1>Edit Task</h1>
+<form action="/tasks/<%= task._id %>" method="post">
+  <input type="hidden" name="_method" value="put">
+  <div class="form-group col-md-6">
+    <label for="task_description">Task</label>
+    <input type="text" class="form-control" id="task_description"  name="task[description]" value="<%= task.description %>">
+  </div>
+  <div class="form-group col-md-6">
+    <label for="task_category">Category</label>
+    <select class="form-control" id="task_category" name="task[category]" value="<%= task.category %>">
+        <option value="Work">Work</option>
+        <option value="Home">Home</option>
+        <option value="Social">Social</option>
+        <option value="Personal">Personal</option>
+    </select>
+  </div>
+  <div class="form-group col-md-6">
+    <label for="task_startDate">Start Date</label>
+    <input type="date" class="form-control" id="task_startDate" name="task[startDate]" value="<%= tempStartDate %>">
+  </div>
+  <div class="form-group col-md-6">
+    <label for="task_endDate">End Date</label>
+    <input type="date" class="form-control" id="task_endDate" name="task[endDate]" value="<%= tempEndDate %>">
+  </div>
+<div class="form-group col-md-6">
+  <label for="task_owner">Task Owner</label>
+  <select class="form-control" id="task_owner" name="task[owner]">
+    <% users.forEach(user => {
+      var isSelected = '';
+      if(user._id.equals(task.owner._id)) {
+        isSelected = 'selected';
+      } %>
+      <option value="<%= user._id %>" <%= isSelected %>>
+        <%= user.name %>
+      </option>
+    <% }); %>
+  </select>
+</div>
+<div class="form-group col-md-6">
+  <label for="task_assignedTo">Assigned To</label>
+  <select class="form-control" id="assignedTo" name="task[assignedTo]">
+    <% users.forEach(user => {
+      var isSelected = '';
+      if(user._id.equals(task.assignedTo._id)) {
+        isSelected = 'selected';
+      } %>
+      <option value="<%= user._id %>" <%= isSelected %>>
+        <%= user.name %>
+      </option>
+    <% }); %>
+  </select>
+</div>
+<input type="submit" value="Submit" class="btn btn-primary">
+</form>

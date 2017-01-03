@@ -1,0 +1,17 @@
+{
+  "name": "to-do-app",
+  "description": "Christmas Project",
+  "main": "index.js",
+  "authors": [
+    "Davinder Kaur"
+  ],
+  "license": "ISC",
+  "homepage": "https://github.com/MissDavinderKaur/WDI_LDN_24_HOMEWORK",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}
