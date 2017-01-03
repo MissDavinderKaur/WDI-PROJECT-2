@@ -9,7 +9,7 @@ const router          = require('./config/routes');
 const app             = express();
 const port            = process.env.PORT || 3000;
 
-const databaseURL = 'mongodb://localhost/tododb';
+const databaseURL = process.env.MONGODB_URI || 'mongodb://localhost/tododb';
 mongoose.connect(databaseURL, () => {
   return console.log(`App is connected to the ${databaseURL} database`);
 });
